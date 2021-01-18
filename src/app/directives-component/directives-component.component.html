@@ -1,0 +1,8 @@
+<button class="btn btn-primary" (click)="alterHiddenContent()">Display Details</button>
+<p *ngIf="hideContent; else hiddenContent"></p>
+<ng-template #hiddenContent>
+    <p>Any Content Of My Choice</p>
+</ng-template>
+<p *ngFor="let log of logs; let i = index" [ngStyle]="{background: getColor(i)}" [ngClass]="{specialLog: i >= 4}">
+    {{logs[i]}}
+</p>
